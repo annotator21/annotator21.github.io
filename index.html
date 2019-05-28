@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/gif/png" href="wsicn.ico">
+    <title>Avishek Garain</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <link href="devicons.min.css" rel="stylesheet">
+    <link href="simple-line-icons.css" rel="stylesheet">
+    <link href="simple-line-icons.less" rel="stylesheet">	
+    <!-- Custom styles for this template -->
+    <link href="resume.min.css" rel="stylesheet">
+<style>
+	.alert{
+	text-align: center;
+	padding:10px;
+	background:#79c879;
+	color:#fff;
+	margin-bottom:10px;
+	display:none;
+	}
+	  </style>
+<style>
+.form-popup {
+  display: none;
+  width:"600px";
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container-left {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+  z-index:9;  
+}
+	
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+	  </style>
+  
+  </head>
+
+  <body id="page-top" bgcolor="#9CD9F2">
+	  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+	  <!--script src="require.js"></script-->
+	  <script type="text/javascript" src="Annotator1/data1.js"></script>
+	  <script type="text/javascript" src="Annotator2/data1.js"></script>
+	  <script type="text/javascript" src="Annotator3/data1.js"></script>
+	  <script src="stats.js"></script>
+	  <script src="main.js"></script>
+	  <script src="Relation.js"></script>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Argument Annotation</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="profile.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+	   <li class="nav-item">
+		   <a class="nav-link js-scroll-trigger" href="#Annotator1">Annotator1</a></li>
+      
+     
+	   <li class="nav-item">
+		   <a class="nav-link js-scroll-trigger" href="#Annotator2">Annotator2</a></li>
+        
+      
+        
+	   <li class="nav-item">
+		   <a class="nav-link js-scroll-trigger" href="#Annotator3">Annotator3</a></li>
+        </ul>
+      </div>
+    </nav>
+<div class="form-popup" id="myForm1.1">
+  <form class="form-container">
+    <h3>Relation</h3>
+	  <label for="Relation_claim1.1">Claim</label>
+<select id="Relation_claim1.1" name="Relation_claim1.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select><br>
+	  <label for="Relation_premise1.1">Premise</label>
+<select id="Relation_premise1.1" name="Relation_premise1.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+	  </select>
+	  <br>
+	  <button style="margin:10px" id="Rel_att1.1" onclick="Rel_att1_1()">Attack</button>
+	  <button style="margin:8px" id="Rel_supp1.1" onclick="Rel_supp1_1()">Support</button>
+	  <button style="margin:5px" id="Rel_con1.1" onclick="Rel_con1_1()">Continue</button><br>
+    <button class="btn" id="Rel_sub1.1" onclick="Rel_sub1_1()">Submit</button>
+    <button class="btn cancel" onclick="closeForm1_1()">Close</button>
+  </form>
+</div>
+	  
+<div class="form-popup" id="myForm2.1">
+  <form class="form-container">
+    <h3>Relation</h3>
+<label for="Relation_claim2.1">Claim</label>
+<select id="Relation_claim2.1" name="Relation_claim2.1" STYLE="color: rgb(0,127,255); width: 150px; width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select><br>
+<label for="Relation_premise2.1">Premise</label>
+<select id="Relation_premise2.1" name="Relation_premise2.1" STYLE="color: rgb(0,127,255); width: 150px; width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+	  </select>
+	  <br>
+	  <button style="margin:10px" id="Rel_att2.1" onclick="Rel_att2_1()">Attack</button>
+	  <button style="margin:8px" id="Rel_supp2.1" onclick="Rel_supp2_1()">Support</button>
+	  <button style="margin:5px" id="Rel_con2.1" onclick="Rel_con2_1()">Continue</button><br>
+    <button class="btn" id="Rel_sub2.1" onclick="Rel_sub2_1()">Submit</button>
+    <button class="btn cancel" onclick="closeForm2_1()">Close</button>
+  </form>
+</div>
+	 
+<div class="form-popup" id="myForm3.1">
+  <form class="form-container">
+    <h3>Relation</h3>
+<label for="Relation_claim3.1">Claim</label>
+<select id="Relation_claim3.1" name="Relation_claim3.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select><br>
+<label for="Relation_premise3.1">Premise</label>
+<select id="Relation_premise3.1" name="Relation_premise3.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+	  </select>
+	  
+    <button class="btn cancel" onclick="closeForm3_1()">Close</button>
+  </form>
+</div>
+	  
+	  <div class="form-popup" id="Till_now1.1">
+  <form class="form-container" >
+    <textarea id="text_till_1" cols="24" rows="20" name="Page1" wrap="soft" STYLE="color: rgb(139,49,186) ;overflow-x: scroll; overflow-y: scroll; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+    <button class="btn cancel" onclick="close_TillForm1_1()">Close</button>
+  </form>
+</div>
+	  
+<div class="form-popup" id="Till_now2.1">
+  <form class="form-container">
+<textarea id="text_till_2" cols="24" rows="20" name="Page1" wrap="soft" STYLE="color: rgb(139,49,186) ;overflow-x: scroll; overflow-y: scroll; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+    <button class="btn cancel" onclick="close_TillForm2_1()">Close</button>
+  </form>
+</div>
+	 
+<div class="form-popup" id="Till_now3.1">
+  <form class="form-container">
+    <textarea id="text_till_3" cols="24" rows="20" name="Page1" wrap="soft" STYLE="color: rgb(139,49,186) ; overflow-x: scroll; overflow-y: scroll; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+ <button class="btn cancel" onclick="close_TillForm3_1()">Close</button>
+  </form>
+</div>
+
+
+    <div class="container-fluid p-0" style="background-color: #9CD9F2;">
+	    <h1>Argument Annotation Interface</h1>
+	<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Annotator1" style="background-color: #9CD9F2;">
+
+		<div id="firebaseui-auth-container"></div>
+	<div class="alert">Your message has been sent.</div> 	
+	<form id="contactForm" >
+		Comment1<br><textarea id="Comment1" cols="50" rows="10" name="Comment1" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="9999999999"></textarea>
+      <div class="col-25" style="float:right">
+        <button name="Claim1.1" id="Claim1.1" style="margin:5px;">
+    <span>Claim</span>
+  </button>
+        <select id="Discourse1.1" name="Discourse1.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+	<div class="col-25" style="float:right">
+        <button name="Premise1.1" id="Premise1.1" style="margin:5px;">
+    <span>Premise</span>
+  </button>
+        <select id="Prim1.1" name="Prim1.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+    <br>
+		
+  		Comment2<br><textarea id="Comment2" cols="50" rows="10" name="Comment2" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="9999999999"></textarea>
+      <div class="col-25" style="float:right">
+        <button name="Claim1.2" id="Claim1.2" style="margin:5px;">
+    <span>Claim</span>
+  </button>
+        <select id="Discourse1.2" name="Discourse1.2" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+		<div class="col-25" style="float:right">
+        <button name="Premise1.2" id="Premise1.2" style="margin:5px;">
+    <span>Premise</span>
+  </button>
+        <select id="Prim1.2" name="Prim1.2" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+    <br><br>
+			
+			<button type="submit" name="submit" id="submit" style="margin:5px;">
+    <span>Send</span>
+  </button><button name="next" id="next" style="margin:5px;">
+    <span>Next</span>
+  </button>
+		<button name="Page1b" id="Page1b" style="margin:5px;">
+    <span>Comment to be displayed</span>
+  </button><textarea id="Page1" cols="6" rows="2" name="Page1" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+	<br>Count this session
+		<textarea id="Count1" cols="6" rows="2" name="Count1" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+<button id="Rel1.1" onclick="openForm1_1()" style="margin:5px;">Relation</button><br>
+		Response
+<textarea id="Resp1" cols="12" rows="2" name="Resp1" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+</button><button name="Till_1" id="Till_1" style="margin:5px;" onclick="Till_now1_1()">
+    <span>Till Now</span>
+  </button>
+
+		</form>
+		</section>
+	    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Annotator2" style="background-color: #9CD9F2;">
+
+		<div id="firebaseui-auth-container"></div>
+	<div class="alert">Your message has been sent.</div> 	
+	<form id="contactForm2" style="background-color: "#9CD9F2";">
+		Comment1<br><textarea id="Comment1.2" cols="50" rows="10" name="Comment1" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="9999999999"></textarea>
+      <div class="col-25" style="float:right">
+        <button name="Claim2.1" id="Claim2.1" style="margin:5px;">
+    <span>Claim</span>
+  </button>
+        <select id="Discourse2.1" name="Discourse2.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+		<div class="col-25" style="float:right">
+        <button name="Premise2.1" id="Premise2.1" style="margin:5px;">
+    <span>Premise</span>
+  </button>
+        <select id="Prim2.1" name="Prim2.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+    <br>
+		
+  		Comment2<br><textarea id="Comment2.2" cols="50" rows="10" name="Comment2" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="9999999999"></textarea>
+      <div class="col-25" style="float:right">
+        <button name="Claim2.2" id="Claim2.2" style="margin:5px;">
+    <span>Claim</span>
+  </button>
+        <select id="Discourse2.2" name="Discourse2.2" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+	<div class="col-25" style="float:right">
+        <button name="Premise2.2" id="Premise2.2" style="margin:5px;">
+    <span>Premise</span>
+  </button>
+        <select id="Prim2.2" name="Prim2.2" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>	
+    <br><br>
+			
+			<button type="submit" name="submit2" id="submit2" style="margin:5px;">
+    <span>Send</span>
+  </button><button name="next2" id="next2" style="margin:5px;">
+    <span>Next</span>
+  </button>
+		<button name="Page2b" id="Page2b" style="margin:5px;">
+    <span>Comment to be displayed</span>
+  </button><textarea id="Page2" cols="6" rows="2" name="Page2" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+		<br>Count this session
+		<textarea id="Count2" cols="6" rows="2" name="Count2" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+<button id="Rel2.1" onclick="openForm2_1()" style="margin:5px;">Relation</button><br>
+		Response
+<textarea id="Resp2" cols="12" rows="2" name="Resp2" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+<button name="Till_2" id="Till_2" style="margin:5px;" onclick="Till_now2_2()">
+    <span>Till Now</span>
+  </button>
+
+		    </form>
+		</section>
+	    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Annotator3" style="background-color: #9CD9F2;">
+
+		<div id="firebaseui-auth-container"></div>
+	<div class="alert">Your message has been sent.</div> 	
+	<form id="contactForm3" style="background-color: "#9CD9F2";">
+		Comment1<br><textarea id="Comment1.3" cols="50" rows="10" name="Comment1" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="9999999999"></textarea>
+      <div class="col-25" style="float:right">
+        <button name="Claim3.1" id="Claim3.1" style="margin:5px;">
+    <span>Claim</span>
+  </button>
+        <select id="Discourse3.1" name="Discourse3.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+		<div class="col-25" style="float:right">
+        <button name="Premise3.1" id="Premise3.1" style="margin:5px;">
+    <span>Premise</span>
+  </button>
+        <select id="Prim3.1" name="Prim3.1" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+    <br>
+		
+  		Comment2<br><textarea id="Comment2.3" cols="50" rows="10" name="Comment2" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="9999999999"></textarea>
+      <div class="col-25" style="float:right">
+        <button name="Claim3.2" id="Claim3.2" style="margin:5px;">
+    <span>Claim</span>
+  </button>
+        <select id="Discourse3.2" name="Discourse3.2" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+		<div class="col-25" style="float:right">
+        <button name="Premise3.2" id="Premise3.2" style="margin:5px;">
+    <span>Premise</span>
+  </button>
+        <select id="Prim3.2" name="Prim3.2" STYLE="color: rgb(0,127,255); width: 150px; overflow-x: scroll; overflow-y: scroll; background-color: rgba(234,62,249,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "multiple size="10">
+         
+        </select>
+      </div>
+    <br><br>		
+			<button type="submit" name="submit3" id="submit3" style="margin:5px;">
+    <span>Send</span>
+  </button><button name="next3" id="next3" style="margin:5px;">
+    <span>Next</span>
+  </button>
+		<button name="Page3b" id="Page3b" style="margin:5px;">
+    <span>Comment to be displayed</span>
+  </button><textarea id="Page3" cols="6" rows="2" name="Page3" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+	<br>Count this session
+		<textarea id="Count3" cols="6" rows="2" name="Count3" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+<button id="Rel3.1" onclick="openForm3_1()" style="margin:5px;">Relation</button><br>
+		Response
+<textarea id="Resp3" cols="12" rows="2" name="Resp3" wrap="soft" STYLE="color: rgb(139,49,186) ; background-color: rgba(255,255,255,0.25); font-size=30px; font-family: Courier New; font-weight: bold; "  max="999999999999"></textarea>
+<button name="Till_3" id="Till_3" style="margin:5px;" onclick="Till_now3_3()">
+    <span>Till Now</span>
+  </button>
+
+		
+		</form>
+		</section>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="resume.min.js"></script>
+	
+	
+	
+  </body>
+
+</html>
