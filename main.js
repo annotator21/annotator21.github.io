@@ -284,19 +284,19 @@ function toComment(e){
 e.preventDefault();
 var pa1=parseInt(document.getElementById('Page1').value,10);
 console.log(pa1);
-complete.set_level1(pa1-1);
+complete.set_level1(2*pa1-1);
 drawData1();
 } 
 function toComment2(e){
 e.preventDefault();
 var pa2=parseInt(document.getElementById('Page2').value,10);
-complete.set_level2(pa2-1);
+complete.set_level2(2*pa2-1);
 drawData2();
 } 
 function toComment3(e){
 e.preventDefault();
 var pa3=parseInt(document.getElementById('Page3').value,10);
-complete.set_level3(pa3-1);
+complete.set_level3(2*pa3-1);
 drawData3();
 } 
 	
