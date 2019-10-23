@@ -266,7 +266,7 @@ e.preventDefault();
 if(complete.get_level2()<Len_max2-1){
 count2=count2+1;
 complete.set_level2(complete.get_level2()+2);
-console.log(complete.get_level1());
+console.log(complete.get_level2());
 drawData2();
 }
 } 
