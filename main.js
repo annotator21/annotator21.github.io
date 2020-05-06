@@ -59,7 +59,9 @@ function loopSelected(id) {
     } 
 return selectedArray;
 }
-
+document.getElementById('back').addEventListener("click", prevComment);
+document.getElementById('back2').addEventListener("click", prevComment2);
+document.getElementById('back3').addEventListener("click", prevComment3);
 document.getElementById('next').addEventListener("click", nextComment);
 document.getElementById('next2').addEventListener("click", nextComment2);
 document.getElementById('next3').addEventListener("click", nextComment3);
@@ -275,6 +277,33 @@ e.preventDefault();
 if(complete.get_level3()<Len_max3-1){
 count3=count3+1;
 complete.set_level3(complete.get_level3()+2);
+console.log(complete.get_level3());
+drawData3();
+}
+}
+function prevComment(e){
+e.preventDefault();
+if(complete.get_level1()<Len_max1-1){
+count1=count1-1;
+complete.set_level1(complete.get_level1()-2);
+console.log(complete.get_level1());
+drawData1();
+}
+} 
+function prevComment2(e){
+e.preventDefault();
+if(complete.get_level2()<Len_max2-1){
+count2=count2-1;
+complete.set_level2(complete.get_level2()-2);
+console.log(complete.get_level1());
+drawData2();
+}
+} 
+function prevComment3(e){
+e.preventDefault();
+if(complete.get_level3()<Len_max3-1){
+count3=count3-1;
+complete.set_level3(complete.get_level3()-2);
 console.log(complete.get_level3());
 drawData3();
 }
